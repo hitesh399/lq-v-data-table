@@ -230,6 +230,7 @@ export default Vue.extend({
         let _headers = headers.map(header => {
             return this.$createElement('lq-v-data-table-header', {
                 props: {header: header},
+                attrs: {align: header.align ? header.align : 'left'},
                 key: header.text
             })
         })
@@ -237,6 +238,9 @@ export default Vue.extend({
             _headers.unshift(
                 this.$createElement(
                     'th',
+                    {
+                        attrs: {align: 'left'}
+                    },
                     [
                         this.$createElement(
                             'lq-v-data-table-select-all',
