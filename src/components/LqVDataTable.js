@@ -159,7 +159,8 @@ export default Vue.extend({
                 extraDataKeys: ['sort_by'],
                 autoRefresh: this.autoRefresh,
                 keepSelectedOnPageChange: this.keepSelectedOnPageChange,
-                defaultPageSize: this.defaultPageSize
+                defaultPageSize: this.defaultPageSize,
+                staticData: this.staticData
             },
             scopedSlots: {
                 ...this.$scopedSlots,
