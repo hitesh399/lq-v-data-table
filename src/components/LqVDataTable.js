@@ -50,7 +50,8 @@ export default Vue.extend({
     keepSelectedOnPageChange: {
         type: Boolean,
         default: () => true
-    }
+    },
+    otherServerData: Array,
   },
   data () {
       return {
@@ -160,7 +161,8 @@ export default Vue.extend({
                 autoRefresh: this.autoRefresh,
                 keepSelectedOnPageChange: this.keepSelectedOnPageChange,
                 defaultPageSize: this.defaultPageSize,
-                staticData: this.staticData
+                staticData: this.staticData,
+                otherServerData: this.otherServerData
             },
             scopedSlots: {
                 ...this.$scopedSlots,
