@@ -25,6 +25,10 @@ export default Vue.extend({
         type: String,
         default: () => 'asc'
     },
+    keepAlive: {
+        type: Boolean,
+        default: () => true
+    },
     defaultPageSize: Number,
     staticData: Object,
     rowsPerPageItems: {
@@ -151,7 +155,7 @@ export default Vue.extend({
         // console.log('Scope', this.$slots)
         return this.$createElement('lq-list', {
             props: {
-                keepAlive: true,                
+                keepAlive: this.keepAlive,              
                 type: 'table',
                 name: this.tableName,
                 requestMethod: this.method,
