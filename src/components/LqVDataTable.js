@@ -190,7 +190,6 @@ export default Vue.extend({
         }
         const { sortBy, descending } = data;
         if(data.page !== this.currentPage && data.rowsPerPage === this.pageSize) {
-            this.$lqForm.removeElement(this.tableName, 'selected')
             this.$lqTable.switchPage(this.tableName, data.page);
         } else if (data.rowsPerPage !== this.pageSize) {
             this.$lqTable.changePageSize(this.tableName, data.rowsPerPage);
