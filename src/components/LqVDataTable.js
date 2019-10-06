@@ -63,6 +63,10 @@ export default Vue.extend({
             type: String,
             default: () => lqTableOptions.noDataText
         },
+        noResultsText: {
+            type: String,
+            default: () => lqTableOptions.noResultsText
+        },
         keepSelectedOnPageChange: {
             type: Boolean,
             default: () => lqTableOptions.keepSelectedOnPageChange
@@ -153,7 +157,8 @@ export default Vue.extend({
                         rowsPerPageItems: this.rowsPerPageItems,
                         pagination: this.pagination,
                         itemKey: this.itemKey,
-                        noDataText: scope.requesting ? this.loadingText : this.noDataText
+                        noDataText: scope.requesting ? this.loadingText : this.noDataText,
+                        noResultsText: scope.requesting ? this.loadingText : this.noResultsText
                     },
                     scopedSlots: {
                         ...this.$scopedSlots,

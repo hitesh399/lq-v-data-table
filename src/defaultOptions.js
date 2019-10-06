@@ -8,7 +8,8 @@ const lqTableOptions = {
         keepSelectedOnPageChange: true,
         keepAlive: true,
         loadingText: 'Fetching...',
-        noDataText: 'No data available'
+        noDataText: 'No data available',
+        noResultsText: 'No matching records found'
     },
     get rowsPerPageItems() {
         return this.options.rowsPerPageItems
@@ -36,6 +37,9 @@ const lqTableOptions = {
     },
     get keepAlive() {
         return this.options.keepAlive
+    },
+    get noResultsText() {
+        return this.options.noResultsText
     },
     merge: function (options) {
         this.options = {
