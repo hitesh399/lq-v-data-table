@@ -2,14 +2,8 @@
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    configureWebpack: {
-      plugins: [
-        // new BundleAnalyzerPlugin()
-      ]
-    },
     configureWebpack: config => {
-		config.externals = {
-			...config.externals,
+		const externalPackages = {
 			'axios': 'axios',
 			'validate.js': 'validate.js',
 			'vuex': 'vuex',
@@ -17,6 +11,10 @@ module.exports = {
 			'vue': 'vue',
 			'lq-form': 'lq-form',
 			'vuetify': 'vuetify'
+		}
+		config.externals = {
+			...config.externals,
+			...(process.env.NODE_ENV === 'production' ? externalPackages : {})
 		}
 	}
  }
