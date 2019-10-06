@@ -252,6 +252,9 @@ export default Vue.extend({
         },
         getTH(headers) {
             let _headers = headers.map(header => {
+                if (header.permissions && typeof lqTableOptions.can === 'function' && !lqTableOptions.can(header.permissions)) {
+                    return null;
+                }
                 return this.$createElement('lq-v-data-table-header', {
                     props: { header: header },
                     attrs: { align: header.align ? header.align : 'left' },
