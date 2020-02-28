@@ -170,9 +170,9 @@ export default Vue.extend({
             )
         },
         getLqList() {
-            // console.log('Scope', this.$slots)
             return this.$createElement('lq-list', {
                 props: {
+                    ...this.$attrs,
                     keepAlive: this.keepAlive,
                     type: 'table',
                     name: this.tableName,

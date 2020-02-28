@@ -3,24 +3,30 @@
   "version": "0.1.11",
   "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve src/dev/index.js",
     "build-bundle": "vue-cli-service build --target lib --name lq.vdatatable src/main.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "license": "MIT",
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vuejs-object-helper": "^0.1.33"
   },
   "main": "dist/lq.vdatatable.umd.js",
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
+    "axios": "^0.19.2",
     "babel-eslint": "^10.0.1",
+    "core-js": "^2.6.5",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "lq-form": "^0.1.120",
+    "lq-vuetify": "^0.0.64",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify": "1.5.*",
+    "vuex": "^3.1.2"
   }
 }
